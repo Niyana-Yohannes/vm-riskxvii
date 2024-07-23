@@ -1,0 +1,28 @@
+
+itype_operations/itype_operations:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	7ff00113          	li	sp,2047
+   4:	00c000ef          	jal	ra,10 <main>
+   8:	000017b7          	lui	a5,0x1
+   c:	80078623          	sb	zero,-2036(a5) # 80c <ADDR_END+0xc>
+
+00000010 <main>:
+  10:	00001737          	lui	a4,0x1
+  14:	81670793          	addi	a5,a4,-2026 # 816 <ADDR_END+0x16>
+  18:	0007a783          	lw	a5,0(a5)
+  1c:	00578693          	addi	a3,a5,5
+  20:	80d72223          	sw	a3,-2044(a4)
+  24:	0057c693          	xori	a3,a5,5
+  28:	80d72223          	sw	a3,-2044(a4)
+  2c:	0057e693          	ori	a3,a5,5
+  30:	80d72223          	sw	a3,-2044(a4)
+  34:	0057f793          	andi	a5,a5,5
+  38:	80f72223          	sw	a5,-2044(a4)
+  3c:	100007b7          	lui	a5,0x10000
+  40:	80f72423          	sw	a5,-2040(a4)
+  44:	00000513          	li	a0,0
+  48:	00008067          	ret

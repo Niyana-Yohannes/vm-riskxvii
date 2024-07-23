@@ -1,0 +1,45 @@
+
+rtype_operations/rtype_operations:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	7ff00113          	li	sp,2047
+   4:	00c000ef          	jal	ra,10 <main>
+   8:	000017b7          	lui	a5,0x1
+   c:	80078623          	sb	zero,-2036(a5) # 80c <ADDR_END+0xc>
+
+00000010 <main>:
+  10:	00001737          	lui	a4,0x1
+  14:	81670793          	addi	a5,a4,-2026 # 816 <ADDR_END+0x16>
+  18:	0007a683          	lw	a3,0(a5)
+  1c:	0007a603          	lw	a2,0(a5)
+  20:	40c686b3          	sub	a3,a3,a2
+  24:	80d72223          	sw	a3,-2044(a4)
+  28:	0007a603          	lw	a2,0(a5)
+  2c:	0007a683          	lw	a3,0(a5)
+  30:	00c6f6b3          	and	a3,a3,a2
+  34:	80d72223          	sw	a3,-2044(a4)
+  38:	0007a603          	lw	a2,0(a5)
+  3c:	0007a683          	lw	a3,0(a5)
+  40:	00c6e6b3          	or	a3,a3,a2
+  44:	80d72223          	sw	a3,-2044(a4)
+  48:	0007a603          	lw	a2,0(a5)
+  4c:	0007a683          	lw	a3,0(a5)
+  50:	00c6c6b3          	xor	a3,a3,a2
+  54:	80d72223          	sw	a3,-2044(a4)
+  58:	0007a603          	lw	a2,0(a5)
+  5c:	0007a683          	lw	a3,0(a5)
+  60:	00d626b3          	slt	a3,a2,a3
+  64:	80d72223          	sw	a3,-2044(a4)
+  68:	0007a603          	lw	a2,0(a5)
+  6c:	0007a783          	lw	a5,0(a5)
+  70:	02000693          	li	a3,32
+  74:	40f686b3          	sub	a3,a3,a5
+  78:	00d616b3          	sll	a3,a2,a3
+  7c:	40f65633          	sra	a2,a2,a5
+  80:	00c6e7b3          	or	a5,a3,a2
+  84:	80f72223          	sw	a5,-2044(a4)
+  88:	00000513          	li	a0,0
+  8c:	00008067          	ret

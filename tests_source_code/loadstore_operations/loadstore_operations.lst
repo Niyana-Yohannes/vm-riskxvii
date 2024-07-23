@@ -1,0 +1,37 @@
+
+loadstore_operations/loadstore_operations:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	7ff00113          	li	sp,2047
+   4:	00c000ef          	jal	ra,10 <main>
+   8:	000017b7          	lui	a5,0x1
+   c:	80078623          	sb	zero,-2036(a5) # 80c <ADDR_END+0xc>
+
+00000010 <main>:
+  10:	000017b7          	lui	a5,0x1
+  14:	81678713          	addi	a4,a5,-2026 # 816 <ADDR_END+0x16>
+  18:	00072603          	lw	a2,0(a4)
+  1c:	40000693          	li	a3,1024
+  20:	00c68023          	sb	a2,0(a3)
+  24:	00068683          	lb	a3,0(a3)
+  28:	80d7a223          	sw	a3,-2044(a5)
+  2c:	00072603          	lw	a2,0(a4)
+  30:	50000693          	li	a3,1280
+  34:	00c69023          	sh	a2,0(a3)
+  38:	00069683          	lh	a3,0(a3)
+  3c:	8007a223          	sw	zero,-2044(a5)
+  40:	00072603          	lw	a2,0(a4)
+  44:	60000693          	li	a3,1536
+  48:	00c6a023          	sw	a2,0(a3)
+  4c:	0006a683          	lw	a3,0(a3)
+  50:	8007a223          	sw	zero,-2044(a5)
+  54:	00072703          	lw	a4,0(a4)
+  58:	80078693          	addi	a3,a5,-2048
+  5c:	00e6a023          	sw	a4,0(a3)
+  60:	0006a683          	lw	a3,0(a3)
+  64:	8007a223          	sw	zero,-2044(a5)
+  68:	00000513          	li	a0,0
+  6c:	00008067          	ret
